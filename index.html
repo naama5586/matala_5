@@ -1,0 +1,185 @@
+<html>
+    <head>
+        <title>פרטי נכס</title>
+    </head>
+        <style>
+            body {
+                direction: rtl;
+            }
+            }
+    
+            .form-row {
+                display: flex;
+                align-items: center;
+            }
+    
+            .form-row label {
+                margin-right: 0px;
+            }
+    
+            .form-row input {
+                flex: 1;
+            }
+    
+            .form-row--double input {
+                margin-left: 10px;
+            }
+        </style>
+<body>
+<form action = "http://localhost:5000/predict" method = "post">
+<h1>פרטי הנכס</h1>
+<label for="type">סוג הנכס:</label>
+<select id="type" name="type">
+    <option value="דירה">דירה</option>
+    <option value="בית פרטי">בית פרטי</option>
+    <option value="דירת גן">דירת גן</option>
+    <option value="בניין">בניין</option>
+    <option value="דו משפחתי">דו משפחתי</option>
+    <option value="דופלקס">דופלקס</option>
+    <option value="דירת גג">דירת גג</option>
+    <option value="דירת נופש">דירת נופש</option>
+    <option value="טריפלקס">טריפלקס</option>
+    <option value="מגרש">מגרש</option>
+    <option value="מיני פנטהאוז">מיני פנטהאוז</option>
+    <option value="נחלה">נחלה</option>
+    <option value="פנטהאוז">פנטהאוז</option>
+    <option value="קוטג'">קוטג'</option>
+    <option value="קוטג' טורי">קוטג' טורי</option>
+    <option value="יחידת דיור">יחידת דיור</option>
+    <option value="סטודיו/לופט">סטודיו/לופט</option>
+    <option value="משק חקלאי">משק חקלאי</option>
+    <option value="דירת מרתף">דירת מרתף</option>
+    <option value="מחסן">מחסן</option>
+    <option value="דירה מחולקת">דירה מחולקת</option>
+    <option value="קבוצת רכישה">קבוצת רכישה</option>
+    <option value="משק עזר">משק עזר</option>
+    <option value="חניה">חניה</option>
+    <option value="אחר">אחר</option>
+</select><br><br>
+
+<label for="area">שטח במ"ר:</label>
+<input type="text"  id="area" name="area" pattern="[0-9]*"><br><br>
+
+<label for="room_number">מספר חדרים:</label>
+<input type="number" id="room_number" name="room_number" min="1" max="10"><br><br>
+
+<label for="half_room">להוסיף חצי חדר?</label>
+<select id="half_room" name="half_room">
+    <option value='לא'>לא</option>
+    <option value='כן'>כן</option>
+
+</select><br><br>
+
+
+<div class="form-row">
+    <label for="floor">קומה:</label>
+    <input type="number" id="floor_out_of" name="floor" min="1" max="100" name="floor_out_of">
+
+    <label for="out_of">מתוך:</label>
+    <input type="number" id="floor_out_of" name="out_of" min="1" max="100" class="form-row--double">
+</div>
+</select><br>
+
+<label for="hasElevator">יש מעלית? </label>
+<select id="hasElevator" name="hasElevator">
+    <option value=0>אין</option>
+    <option value=1>יש</option>
+</select><br><br>
+
+<label for="hasParking">יש חניה? </label>
+<select id="hasParking" name="hasParking">
+    <option value=0>אין</option>
+    <option value=1>יש</option>
+</select><br><br>
+
+<label for="hasBars">יש סורגים? </label>
+<select id="hasBars" name="hasBars">
+    <option value=0>אין</option>
+    <option value=1>יש</option>
+</select><br><br>
+
+<label for="hasStorage">יש מחסן? </label>
+<select id="hasStorage" name="hasStorage">
+    <option value=0>אין</option>
+    <option value=1>יש</option>
+</select><br><br>
+
+<label for="hasAirCondition">יש מיזוג אוויר?</label>
+<select id="hasAirCondition" name="hasAirCondition">
+    <option value=0>אין</option>
+    <option value=1>יש</option>
+</select><br><br>
+
+<label for="hasBalcony">יש מרפסת? </label>
+<select id="hasBalcony" name="hasBalcony">
+    <option value=0>אין</option>
+    <option value=1>יש</option>
+</select><br><br>
+
+<label for="hasMamad">יש ממ"ד? </label>
+<select id="hasMamad" name="hasMamad">
+    <option value=0>אין</option>
+    <option value=1>יש</option>
+</select><br><br>
+
+<label for="handicapFriendly">נגיש לנכים? </label>
+<select id="handicapFriendly" name="handicapFriendly">
+    <option value=0>אין</option>
+    <option value=1>יש</option>
+</select><br><br>
+
+<label for="condition">מצב הנכס: </label>
+<select id="condition" name="condition">
+    <option value="חדש">חדש</option>
+    <option value="משופץ">משופץ</option>
+    <option value="דורש שיפוץ">דורש שיפוץ</option>
+    <option value="שמור">שמור</option>
+    <option value="ישן">ישן</option>
+</select><br><br>
+
+<label for="num_of_images">מס' התמונות של הנכס:</label>
+<input type="number" id="num_of_images" name="num_of_images" min="0"><br><br>
+
+<label for="city">עיר:</label>
+<input type="text" id="street" name="city"><br><br>
+
+<label for="street">רחוב:</label>
+<input type="text" id="street" name="street"><br><br>
+
+<label for="number_in_street">מס' בית ברחוב:</label>
+<input type="number" id="number_in_street" name="number_in_street" min="1"><br><br>
+
+<label for="city_area">איזור בעיר:</label>
+<input type="text" id="city_area" name="city_area"><br><br>
+
+<div class="form-row">
+    <label for="entrance_date">כניסה: </label>
+    <select id="entrance_date" name="entrance_date" onchange="showFutureDate()">
+        <option value="flexible">מיידי</option>
+        <option value="less_than_6 months">גמיש</option>
+        <option value="None">עתידי</option>
+    </select>
+</div>
+</select><br>
+<div class="form-row" id="futureDateRow">
+    <label for="futureDate">תאריך כניסה עתידי:</label>
+    <input type="date" id="futureDate" name="futureDate" class="hidden">
+</div>
+</select><br>
+
+<label for="furniture">ריהוט:</label>
+<select id="furniture" name="furniture">
+    <option value="Full">מלא</option>
+    <option value="Partial">חלקי</option>
+    <option value="No">אין</option>
+</select><br><br>
+
+<label for="publishedDays">כמה ימים הנכס מפורסם:</label>
+<input type="number" id="publishedDays" name="publishedDays" min="0"><br><br>
+
+<label for="description">תיאור הנכס:</label>
+<textarea id="description" name="description"></textarea><br><br>
+<p><input type = "submit" value = "submit" /></p>
+</form>
+</body>
+</html>
